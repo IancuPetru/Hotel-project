@@ -5,10 +5,10 @@ name: send-mail
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
+ # push:
+    #branches: [ sendmail ]
   pull_request:
-    branches: [ master ]
+    branches: [ sendmail ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -36,7 +36,7 @@ jobs:
           exit 1
       - name: Send mail
         if: failure()
-        uses: dawidd6/action-send-mail@v2
+        uses: Hotel-project/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -47,8 +47,8 @@ jobs:
           body: Build job of ${{github.repository}} Failed!
           # Read file contents as body:
           # body: file://README.md
-          to: wexxxxx@outlook.com,zxdxxxx5@outlook.com
-          from: Github action # <user@example.com>
+          to: petru.iancu@ulbsibiu.ro
+          from:  ${{secrets.MAIL_USERNAME}}
           # Optional content type (defaults to text/plain):
           # content_type: text/html
           # Optional attachments:
