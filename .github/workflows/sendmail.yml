@@ -36,7 +36,7 @@ jobs:
           exit 1
       - name: Send mail
         if: failure()
-        uses: Hotel-project/action-send-mail@v2
+        uses: IancuPetru/action-send-mail@v2
         with:
           server_address: smtp.gmail.com
           server_port: 465
