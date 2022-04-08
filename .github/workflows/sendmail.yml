@@ -47,8 +47,8 @@ jobs:
           body: Build job of ${{github.repository}} Failed!
           # Read file contents as body:
           # body: file://README.md
-          to: wexxxxx@outlook.com,zxdxxxx5@outlook.com
-          from: Github action # <user@example.com>
+          to: petru.iancu@ulbsibiu.ro
+          from:  ${{secrets.MAIL_USERNAME}}
           # Optional content type (defaults to text/plain):
           # content_type: text/html
           # Optional attachments:
