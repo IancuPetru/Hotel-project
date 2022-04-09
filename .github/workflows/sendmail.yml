@@ -5,10 +5,10 @@ name: send-mail
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
- # push:
-    #branches: [ sendmail ]
-  pull_request:
-    branches: [ sendmail ]
+  push:
+    branches: [ IancuPetru-patch-4 ]
+  #pull_request:
+    #branches: [  ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,26 +31,22 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-      - name: failed step
-        run: |
-          exit 1
       - name: Send mail
-        if: failure()
-        uses: IancuPetru/action-send-mail@v2
+        if: always()
+        uses: Hotel-project/action-send-mail@v2
         with:
+          # mail server settings
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
-          subject: Github Actions job result
-          # Literal body:
-          body: Build job of ${{github.repository}} Failed!
-          # Read file contents as body:
-          # body: file://README.md
-          to: petru.iancu@ulbsibiu.ro
-          from:  ${{secrets.MAIL_USERNAME}}
-          # Optional content type (defaults to text/plain):
-          # content_type: text/html
-          # Optional attachments:
-          # attachments: attachments.zip,git.diff,./dist/static/main.js
-  
+          # user credentials
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+           # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # comma-separated string, send email to
+          to: ${{ secrets.MAIL_USERNAME }} 
+          # from email name
+          from: ${{ secrets.MAIL_USERNAME }}
+    from: John Doe
