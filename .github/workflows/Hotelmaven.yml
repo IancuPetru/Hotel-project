@@ -27,7 +27,7 @@ jobs:
      - name: Run tests with Maven
        run: mvn  test --file Hotel-project/pom.xml
      - name: Publish Unit Test Results
-       uses: IancuPetru/ Hotel-project/composite@v1
+       uses: IancuPetru/ Hotel-project@v1
        if: always()
        with:
          files: "test-results/**/*.xml"
