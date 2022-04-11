@@ -26,5 +26,5 @@ jobs:
       run: mvn -B package --file Hotel-project/pom.xml
     - name: Run tests with Maven
       
-      run: mvn -B test --file Hotel-project/pom.xml
+      run: mvn --file Hotel-project/pom.xml test
  
