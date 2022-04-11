@@ -25,5 +25,5 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file Hotel-project/pom.xml
     - name: Test
-      run: mvn ./test
+      run: mvn -X test
 
