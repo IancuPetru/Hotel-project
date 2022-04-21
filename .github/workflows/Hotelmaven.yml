@@ -23,9 +23,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
      - name: Build with Maven
-       run: mvn -B package --file Hotel-project/pom.xml
-     - name: Run tests with Maven
-       run: mvn  test --file Hotel-project/pom.xml
+       run: |
+          mvn -B package --file Hotel-project/pom.xml
+          mvn  test
+    # - name: Run tests with Maven
+      # run: mvn  test --file Hotel-project/pom.xml
      - name: Publish Unit Test Results
        uses: IancuPetru/ Hotel-project@v1
        if: always()
