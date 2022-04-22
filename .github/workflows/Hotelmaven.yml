@@ -25,13 +25,21 @@ jobs:
      - name: Build with Maven
        run:  mvn -B package --file Hotel-project/pom.xml
         
-     - name: Run tests with Maven
-       run:  mvn -B  --file  Hotel-project/pom.xml test
-      # working-directory: ./Hotel-project
-      # run: mvn  test --file Hotel-project/pom.xml
-     #- name: Publish Unit Test Results
-       #uses: IancuPetru/ Hotel-project@v1
-     #  if: always()
-      # with:
-     #    files: "test-results/**/*.xml"
- 
+     - name: Gather test results
+       if: always()
+       run: |
+        mvn site -DgenerateReports=false -Daggregate=true surefire-report:report-only
+        mkdir -p test-results/junit/
+        find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} test-results/junit/ \;
+     - name: Archive test resuls xml
+       if: always()
+       uses: actions/upload-artifact@v1
+       with: 
+        name: test-results
+        path: test-results/junit/
+     - name: Archive test resuls html
+       if: always()
+       uses: actions/upload-artifact@v1
+       with: 
+        name: test-results-html
+        path: target/site
