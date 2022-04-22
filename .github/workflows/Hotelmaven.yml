@@ -31,4 +31,5 @@ jobs:
        with:
          name: Unit Test Results
          path: |
-          Hotel-project/*.xml
+          #Hotel-project/*.xml
+          Hotel-project/pom.xml
