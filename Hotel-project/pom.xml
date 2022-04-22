@@ -9,6 +9,8 @@
  <maven.compiler.target>1.8</maven.compiler.target>
  <junit.jupiter.version>5.4.0</junit.jupiter.version>
  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ <testSourceDirectory>src/main/test/java/Junit1.java</testSourceDirectory>
+ <testSourceDirectory>src/main/test/java/Junit2.java</testSourceDirectory>
 </properties>
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependencies>
