@@ -24,6 +24,8 @@ jobs:
         cache: maven
      - name: Build with Maven
        run:  mvn -B package --file Hotel-project/pom.xml
+     - name:  Build with Maven1
+       run:  mvn -B test --file Hotel-project/pom.xml
         
      - name: Upload Test Results
        if: always()
