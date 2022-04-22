@@ -32,4 +32,4 @@ jobs:
          name: Unit Test Results
          path: |
           #Hotel-project/*.xml
-          Hotel-project/pom.xml
+          Hotel-project/src/test/java/Junit1.java
