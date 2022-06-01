@@ -19,6 +19,6 @@ steps:
     jdkArchitectureOption: 'x64'
 
    # testResultsFiles: '**/surefire-reports/test-*.xml'
-    testResultsFiles: '*/test.xml ' 
+    testResultsFiles: '**/testSourceDirectory/test-*.xml' 
     publishJUnitResults: true
     goals: 'package'
