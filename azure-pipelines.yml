@@ -24,7 +24,7 @@ steps:
 
 
    # testResultsFiles: '**/surefire-reports/test-*.xml'
-    testResultsFiles: '**/surefire-reports/default-test-*.xml'
+    testResultsFiles: '**/surefire-reports/test-*.xml'
     publishJUnitResults: true
     goals: 'package'
 
