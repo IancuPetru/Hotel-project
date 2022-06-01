@@ -17,13 +17,18 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
+   # goals: 'package'
+    
+
+    
+
 
    # testResultsFiles: '**/surefire-reports/test-*.xml'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit' 
-    testResultsFiles: '**/TEST-*.xml' 
+    testResultsFiles: '**/test-*.xml' 
     searchFolder: '$(System.DefaultWorkingDirectory)'
     #testResultsFiles: '/Hotel-project/test-*.xml' 
     #publishJUnitResults: true
-    #goals: 'package'
+   # goals: 'package'
