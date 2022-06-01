@@ -24,11 +24,14 @@ steps:
 
 
    # testResultsFiles: '**/surefire-reports/test-*.xml'
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit' 
-    testResultsFiles: '/Hotel-project/src/test/java/Junit1.java' 
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+    testResultsFiles: '**/surefire-reports/default-test-*.xml'
+    publishJUnitResults: true
+    goals: 'package'
+
+#- task: PublishTestResults@2
+ # inputs:
+ #   testResultsFormat: 'JUnit' 
+   # testResultsFiles: '/Hotel-project/src/test/java/Junit1.java' 
+  #  searchFolder: '$(System.DefaultWorkingDirectory)'
     #testResultsFiles: '/Hotel-project/test-*.xml' 
-    #publishJUnitResults: true
-   # goals: 'package'
+ 
