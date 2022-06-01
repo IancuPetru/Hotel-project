@@ -18,6 +18,7 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
 
-    testResultsFiles: '**/surefire-reports/test-*.xml'
+   # testResultsFiles: '**/surefire-reports/test-*.xml'
+    testResultsFiles: '*/test.xml ' 
     publishJUnitResults: true
     goals: 'package'
