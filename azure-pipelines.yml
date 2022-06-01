@@ -27,7 +27,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit' 
-    testResultsFiles: '/Hotel-project/test.xml' 
+    testResultsFiles: '/Hotel-project/src/test/java/Junit1.java' 
     searchFolder: '$(System.DefaultWorkingDirectory)'
     #testResultsFiles: '/Hotel-project/test-*.xml' 
     #publishJUnitResults: true
