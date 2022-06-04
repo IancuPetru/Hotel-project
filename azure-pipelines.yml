@@ -24,11 +24,13 @@ steps:
 
 
    # testResultsFiles: '**/surefire-reports/test-*.xml'
-    testResultsFiles: '**/surefire-reports/test-*.xml'
+    testResultsFiles: |
+          **/test-*.xml
+          **/junit.xml
     publishJUnitResults: true
     goals: 'package'
 
-#- task: PublishTestResults@2
+  #- task: PublishTestResults@2
  # inputs:
  #   testResultsFormat: 'JUnit' 
    # testResultsFiles: '/Hotel-project/src/test/java/Junit1.java' 
