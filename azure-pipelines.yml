@@ -35,7 +35,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
       testResultsFormat: 'JUnit' 
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      testResultsFiles: '**maven-surefire-report-plugin/TEST-*.xml'
       searchFolder: '$(System.DefaultWorkingDirectory)/Hotel-project/target/Hotel-project'
       failTaskOnFailedTests: true
   #  searchFolder: '$(System.DefaultWorkingDirectory)'
