@@ -27,13 +27,17 @@ steps:
     testResultsFiles: |
           **/test-*.xml
           **/junit.xml
+    
     publishJUnitResults: true
+   # searchFolder: '$(System.DefaultWorkingDirectory)/Hotel-project/Hotel-project/'
     goals: 'package'
 
-  #- task: PublishTestResults@2
- # inputs:
- #   testResultsFormat: 'JUnit' 
-   # testResultsFiles: '/Hotel-project/src/test/java/Junit1.java' 
+- task: PublishTestResults@2
+  inputs:
+      testResultsFormat: 'JUnit' 
+      testResultsFiles: '**/surefire-reports/test-*.xml'
+      searchFolder: '$(System.DefaultWorkingDirectory)/Hotel-project/Hotel-project/'
+      failTaskOnFailedTests: true
   #  searchFolder: '$(System.DefaultWorkingDirectory)'
     #testResultsFiles: '/Hotel-project/test-*.xml' 
  
